@@ -32,6 +32,8 @@ public class AccentureTest {
 	@When("Preencher o formulario, aba Enter Vehicle Data e pressione next")
 	public void na_aba_enter_vehicle_data() {
 		WebDriverWait wait = new WebDriverWait(driver, 20);
+		String esperado = "Enter Vehicle Data";
+		assertEquals(esperado, driver.getTitle());
 		wait.until(ExpectedConditions.presenceOfElementLocated(By.id("make")));
 		driver.findElement(By.id("make")).click();
 		{
@@ -57,6 +59,8 @@ public class AccentureTest {
 	@And("Preencher o formulario, aba Enter Product Data e pressione next")
 	public void na_aba_enter_product_data() {
 		WebDriverWait wait = new WebDriverWait(driver, 20);
+		String esperado = "Enter Product Data";
+		assertEquals(esperado, driver.getTitle());
 		wait.until(ExpectedConditions.presenceOfElementLocated(By.id("startdate")));
 		driver.findElement(By.id("startdate")).sendKeys("09/20/2022");
 		driver.findElement(By.id("insurancesum")).sendKeys("35.000.000,00");
@@ -81,6 +85,8 @@ public class AccentureTest {
 	@And("Preencher o formulario, aba Select Price Option e pressione next")
 	public void na_aba_select_price_option() {
 		WebDriverWait wait = new WebDriverWait(driver, 20);
+		String esperado = "Select Price Option";
+		assertEquals(esperado, driver.getTitle());
 		wait.until(ExpectedConditions.elementToBeClickable(By.id("selectultimate")));
 		driver.findElement(By.xpath("//table[@id='priceTable']/tfoot/tr/th[2]/label[4]/span")).click();
 		wait.until(ExpectedConditions.elementToBeClickable(By.id("nextsendquote")));
@@ -90,6 +96,8 @@ public class AccentureTest {
 	@When("Preencher o formulario, aba Send Quote e pressione Send")
 	public void na_aba_send_quote() {
 		WebDriverWait wait = new WebDriverWait(driver, 20);
+		String esperado = "Send Quote";
+		assertEquals(esperado, driver.getTitle());
 		wait.until(ExpectedConditions.presenceOfElementLocated(By.id("email")));
 		driver.findElement(By.id("email")).sendKeys("diegorosah.hc2@gmail.com");
 		driver.findElement(By.id("phone")).sendKeys("5511963552628");
@@ -103,6 +111,8 @@ public class AccentureTest {
 	@And("Preencher o formulario, aba Enter Insurant Data e pressione next")
 	public void na_aba_enter_insurant_data() {
 		WebDriverWait wait = new WebDriverWait(driver, 20);
+		String esperado = "Enter Insurant Data";
+		assertEquals(esperado, driver.getTitle());
 		wait.until(ExpectedConditions.presenceOfElementLocated(By.id("firstname")));
 		driver.findElement(By.id("firstname")).sendKeys("Diego");
 		driver.findElement(By.id("lastname")).sendKeys("Augusto");
